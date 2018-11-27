@@ -44,7 +44,7 @@ class WeightedDirected:
                 cheapest = cost
         
         
-        return "the cheapest is " + str(cheapest) + " weights, the path is " + str(path)
+        return  "the cheapest is " + str(cheapest) + " weights, the path is " + str(path)
 
 
 
