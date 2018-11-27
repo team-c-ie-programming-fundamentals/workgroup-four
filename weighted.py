@@ -29,21 +29,22 @@ class WeightedDirected:
 
                 
     
-#    def cheapest_path(self, start, end):
-#    all_paths = find_all_paths(graph, start, end)
-#    
-#    cheapest = None
-#    
-#    for path in all_paths:
-#        cost = 0
-#        
-#        for step in path:
-#            cost += step["weight"]
-#            
-#        if cheapest is None or cost < cheapest:
-#            cheapest = cost
-#            
-#    return cheapest
+    def cheapest_path(self, start, end):
+        all_paths = WeightedDirected.find_all_paths(self, start, end)
+        
+        cheapest = None
+        
+        for path in all_paths:
+            cost = 0
+            
+            for step in path:
+                cost += step["weight"]
+                
+            if cheapest is None or cost < cheapest:
+                cheapest = cost
+        
+        
+        return "the cheapest is " + str(cheapest) + " weights, the path is " + str(path)
 
 
 
