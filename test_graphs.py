@@ -1,5 +1,5 @@
  #%%
-import all_graph_functions
+from all_graph_functions import find_path
 
 def test_there_is_no_path(): 
     
@@ -8,7 +8,7 @@ def test_there_is_no_path():
                 "a": ["b","c"],
                 "b": ["c"],
                 "c" : ["b"],
-                "d" : [],
+                "d" : []
                 }
     
 
@@ -18,4 +18,22 @@ def test_there_is_no_path():
     
 #%%
     
-import all_graph_functions_weighted 
+from all_graph_functions import find_all_paths
+
+def test_there_is_two_paths():
+    
+    graph2 = {
+           "a":["b","c"],
+           "b":["d"],
+           "c":["d"],
+           "d":["e"],
+           "e":["a"],
+           "f":[],
+           "g":["c"]
+           }
+     
+    assert find_all_paths(graph2, "a", "d") == ['a', 'b', 'd']
+    
+    
+
+
