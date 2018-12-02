@@ -63,8 +63,9 @@ def test_there_is_one_path():
     assert find_all_paths(graph1, "b", "d") == [['b', 'd']]
     
 def test_one_weight(): 
-    assert find_path_weighted(graph3, "a", "d") == ['a', 'b', 'd']
+    assert find_path_weighted(graph3, "a", "d") == [{'node': 'a', 'weight': 0}, {'node': 'b', 'weight': 1}]
     
-def test_
+def test_:
+    assert find_path_weighted(graph3, "a", "d") ==  [{'node': 'a', 'weight': 0}, {'node': 'b', 'weight': 1}]
 
 
