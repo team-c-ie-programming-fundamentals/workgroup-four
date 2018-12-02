@@ -8,6 +8,16 @@ graph = {
     "f": []
 }
 
+graph2 = {
+           "a":["b","c", "e"],
+           "b":["d"],
+           "c":["d"],
+           "d":["e"],
+           "e":["a"],
+           "f":[],
+           "g":["c"]
+           }
+
 def find_path(graph, start, end, path=[]):
     
     # first thing, we add the current start to the path

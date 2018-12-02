@@ -8,7 +8,7 @@ graph = {
     "f": []
 }
 
-def find_path(graph, start, end, path=[]):
+def find_path_weighted(graph, start, end, path=[]):
     
     # first thing, we add the current start to the path
     path = path + [start]
@@ -38,7 +38,7 @@ def find_path(graph, start, end, path=[]):
     return None
 
 
-def find_all_paths(graph, start, end, path=[]):
+def find_all_paths_weighted(graph, start, end, path=[]):
 
     path = path + [start]
     
