@@ -5,15 +5,15 @@ from graphs import DirectedGraph
 def test_there_is_no_path(): 
     
     
-    graph =  {
-                "a": ["b","c"],
-                "b": ["c"],
-                "c" : ["b"],
-                "d" : [],
-                }
+#    graph =  {
+#                "a": ["b","c"],
+#                "b": ["c"],
+#                "c" : ["b"],
+#                "d" : [],
+#                }
+#    
     
-    
-#    directed_graph = DirectedGraph(graph)
+    directed_graph = DirectedGraph(graph)
     
 #    value = [["a", "d"]]
 #
