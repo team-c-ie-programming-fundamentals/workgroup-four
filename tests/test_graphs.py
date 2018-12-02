@@ -61,4 +61,7 @@ def test_there_is_three_path():
 def test_there_is_one_path(): 
     
     assert find_all_paths(graph1, "b", "d") == [['b', 'd']]
+    
+def test_there(): 
+    assert find_path_weighted(graph1, "a", "d") == ['a', 'b', 'd']
 

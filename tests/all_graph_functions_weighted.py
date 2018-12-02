@@ -28,7 +28,7 @@ def find_path_weighted(graph, start, end, path=[]):
         # if the edge is not in the path (we haven't visited it yet)
         if node not in path:
             # We try to find its path to end
-            newpath = find_path(graph, node, end, path)
+            newpath = find_path_weighted(graph, node, end, path)
 
             # and, if it didn't return None, we return the path 
             if newpath is not None:
@@ -61,7 +61,7 @@ def find_all_paths_weighted(graph, start, end, path=[]):
         if node not in path:
   
             # We try to find all its paths to end
-            new_paths = find_all_paths(graph, node, end, path)
+            new_paths = find_all_paths_weighted(graph, node, end, path)
 
             # and, if it didn't return None, we return the path 
             for new_path in new_paths:
