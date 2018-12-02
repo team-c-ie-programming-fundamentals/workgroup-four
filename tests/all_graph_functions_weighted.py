@@ -1,14 +1,25 @@
 #%%
-graph = {
-    "a": ["b", "c"],
-    "b": ["d"],
-    "c": ["d"],
-    "d": ["e"],
-    "e": [],
-    "f": []
-}
+graph3 = {
+        "a": [{"node": "b", "weight": 1}, {"node": "c", "weight": 2}],
+        "b": [{"node": "d", "weight": 3}],
+        "c": [{"node": "d", "weight": 1}],
+        "d": [{"node": "e", "weight": 3}],
+        "e": [{"node": "f", "weight": 3}]
+        }     
 
-def find_path(graph, start, end, path=[]):
+
+graph4 = {
+        "a": [{"node": "b", "weight": 1}],
+        "b": [{"node": "d", "weight": 3}],
+        "c": [{"node": "d", "weight": 1}],
+        "d": [{"node": "e", "weight": 3}],
+        "e": [{"node": "f", "weight": 3}]
+
+        }    
+
+
+
+def find_path_weighted(graph, start, end, path=[]):
     
     # first thing, we add the current start to the path
     path = path + [start]
@@ -28,7 +39,7 @@ def find_path(graph, start, end, path=[]):
         # if the edge is not in the path (we haven't visited it yet)
         if node not in path:
             # We try to find its path to end
-            newpath = find_path(graph, node, end, path)
+            newpath = find_path_weighted(node["node"], end, path, node["weight"])
 
             # and, if it didn't return None, we return the path 
             if newpath is not None:
@@ -38,7 +49,7 @@ def find_path(graph, start, end, path=[]):
     return None
 
 
-def find_all_paths(graph, start, end, path=[]):
+def find_all_paths_weighted(graph, start, end, path=[]):
 
     path = path + [start]
     
@@ -61,7 +72,7 @@ def find_all_paths(graph, start, end, path=[]):
         if node not in path:
   
             # We try to find all its paths to end
-            new_paths = find_all_paths(graph, node, end, path)
+            new_paths = find_all_paths_weighted(graph, node, end, path)
 
             # and, if it didn't return None, we return the path 
             for new_path in new_paths:
