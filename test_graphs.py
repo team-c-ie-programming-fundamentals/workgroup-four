@@ -1,25 +1,21 @@
-#%%
-from graphs import DirectedGraph
-
+ #%%
+import all_graph_functions
 
 def test_there_is_no_path(): 
     
     
-#    graph =  {
-#                "a": ["b","c"],
-#                "b": ["c"],
-#                "c" : ["b"],
-#                "d" : [],
-#                }
-#    
+    graph =  {
+                "a": ["b","c"],
+                "b": ["c"],
+                "c" : ["b"],
+                "d" : [],
+                }
     
-    directed_graph = DirectedGraph(graph)
-    
-#    value = [["a", "d"]]
-#
-#    for case in value:
+
         
-    assert directed_graph.find_path("a", "d") == None
+    assert find_path(graph, "a", "d") == None
     
     
 #%%
+    
+import all_graph_functions_weighted 
