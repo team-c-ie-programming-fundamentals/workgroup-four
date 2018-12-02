@@ -47,6 +47,11 @@ class WeightedDirected:
         return  "the cheapest is " + str(cheapest) + " weights, the path is " + str(path)
 
 
+# We have decided to place the dictionary directly, but in case we would have to check
+#        a complex graph where we needed to create serval different graph or add nodes
+#        or edges, we would place a solution with a class Node, as it is done in the 
+#        excercise 1. 
+
 
 graph2 = {
     "a": [{"node": "b", "weight": 1}, {"node": "c", "weight": 2}],
